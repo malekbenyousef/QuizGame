@@ -1,0 +1,30 @@
+.container {
+    min-height: 100vh;
+    background: url("/bg-home.svg");
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+}
+
+.header {
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.subheader {    
+    font-size: 1.25em;
+}
+
+.playBtn {
+    margin-top: 20px;
+    padding: 15px 20px;
+    background-color: #307DE7;
+}
+
+.titleScreen {
+    width: 45vw;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+} 
