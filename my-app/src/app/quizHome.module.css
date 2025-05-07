@@ -2,10 +2,10 @@
     width: 100vw;
     height: 100vh;;
     position: relative;
-
 }
 
 .container::before {
+    background-color: white;
     background-image: url("/bg-home.svg");
     background-repeat: no-repeat;
     background-size: cover;

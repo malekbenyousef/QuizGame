@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { X, PenTool, Brain, Braces, Amphora } from "lucide-react";
+import { X, PenTool, Brain, Braces, Amphora, Link } from "lucide-react";
 
 function Modal() {
   const router = useRouter();
@@ -55,7 +55,11 @@ function Modal() {
           </div>
 
           <div>
-            <button className="text-amber-50 bg-blue-500 p-3 rounded-md  hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300">New Game</button>
+            <button className="text-amber-50 bg-blue-500 p-3 rounded-md  hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-300">
+            <a href="/solo">
+              New Game
+            </a>
+            </button>
           </div>
 
           <div className="flex justify-center mt-4">
