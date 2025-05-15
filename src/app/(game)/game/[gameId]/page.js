@@ -163,9 +163,9 @@ export default function GamePage({ params }) {
                       disabled={hasAnswered || isSubmitting}
                       className={`w-full text-left px-4 py-3 rounded-lg border transition-colors duration-200 ${
                         selectedAnswer === index
-                          ? 'border-indigo-500 bg-indigo-50'
-                          : 'border-gray-300 hover:border-indigo-500'
-                      } ${(hasAnswered || isSubmitting) ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                          ? 'border-indigo-500 bg-indigo-600 text-white'
+                          : 'border-gray-300 bg-white text-black hover:bg-gray-50'
+                      } ${(hasAnswered || isSubmitting) ? 'cursor-not-allowed opacity-75' : 'cursor-pointer'}`}
                     >
                       {option}
                     </button>
