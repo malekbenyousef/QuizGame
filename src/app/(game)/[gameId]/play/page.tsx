@@ -138,11 +138,12 @@ export default function GamePlayPage() {
                     key={index}
                     onClick={() => submitAnswer(index)}
                     disabled={selectedAnswer !== null}
-                    className={`w-full p-4 text-left rounded-lg transition-colors ${
+                    className={`w-full text-rose-950 p-4 text-left rounded-lg transition-colors font-medium  ${
                       selectedAnswer === index
                         ? 'bg-indigo-600 text-white'
-                        : 'bg-gray-100 hover:bg-gray-200'
+                        : 'bg-white text-rose-950 border border-gray-300 hover:bg-gray-100'
                     }`}
+                    
                   >
                     {option}
                   </button>
