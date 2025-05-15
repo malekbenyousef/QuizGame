@@ -10,7 +10,7 @@ if (!MONGODB_URI) {
 
 async function connectDB() {
   try {
-    await mongoose.connect('mongodb://localhost:27017/quizgame');
+    await mongoose.connect(MONGODB_URI as string);
     console.log('Connected to MongoDB');
   } catch (error) {
     console.error('MongoDB connection error:', error);
