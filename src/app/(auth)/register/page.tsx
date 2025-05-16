@@ -45,7 +45,7 @@ export default function RegisterPage() {
       }
 
       toast.success('Registered successfully!'); 
-       const pendingGameId = sessionStorage.getItem('pendingGameId');
+       
 
      // Check for pending game join
         const pendingGameId = sessionStorage.getItem('pendingGameId');
