@@ -57,7 +57,7 @@ export default function RegisterPage() {
         }
         
       
-      router.refresh();
+      
     } catch (error: any) {
       toast.error(error.message || 'Something went wrong!');
     } finally {
