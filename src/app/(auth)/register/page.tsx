@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import toast from 'react-hot-toast';
+import { signIn, getSession } from 'next-auth/react';
 
 export default function RegisterPage() {
   const router = useRouter();
