@@ -76,7 +76,7 @@ export default function LobbyPage({ params }) {
     return null;
   }
 
-  const joinUrl = `http://192.168.1.108:3000/join/${game.gameId}`;
+  const joinUrl = `https://quiz-game-tawny-psi.vercel.app/join/${game.gameId}`;
 
   return (
     <div className="min-h-screen bg-gray-100 py-6 sm:py-12 px-3 sm:px-6 lg:px-8">
