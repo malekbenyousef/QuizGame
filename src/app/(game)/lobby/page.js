@@ -16,7 +16,12 @@ export default function LobbyPage() {
       toast.error('Please login first');
       return;
     }
-
+    // Check for pending game join
+        const pendingGameId = sessionStorage.getItem('pendingGameId');
+        if (pendingGameId) {
+          sessionStorage.removeItem('pendingGameId');
+          router.push(`/game/${pendingGameId}/lobby`);
+        }
     setIsCreating(true);
     try {
       const response = await fetch('/api/games', {
