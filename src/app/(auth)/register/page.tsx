@@ -47,10 +47,7 @@ export default function RegisterPage() {
       toast.success('Registered successfully!'); 
        const pendingGameId = sessionStorage.getItem('pendingGameId');
 
-    if (pendingGameId) {
-      sessionStorage.removeItem('pendingGameId');
-      router.push(`/join/${pendingGameId}`);
-    }
+   
       router.push('/');
       router.refresh();
     } catch (error: any) {
