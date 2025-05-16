@@ -36,7 +36,7 @@ export default function DirectJoinPage() {
     if (status === 'unauthenticated') {
       // Store game ID and redirect to login
       sessionStorage.setItem('pendingGameId', gameId);
-      router.push('/register');
+      signIn()
       return;
     }
 
