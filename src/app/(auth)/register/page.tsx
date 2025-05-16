@@ -47,8 +47,16 @@ export default function RegisterPage() {
       toast.success('Registered successfully!'); 
        const pendingGameId = sessionStorage.getItem('pendingGameId');
 
-   
-      router.push('/');
+     // Check for pending game join
+        const pendingGameId = sessionStorage.getItem('pendingGameId');
+        if (pendingGameId) {
+          sessionStorage.removeItem('pendingGameId');
+          router.push(`/game/${pendingGameId}/lobby`);
+        } else {
+          router.push('/');
+        }
+        
+      
       router.refresh();
     } catch (error: any) {
       toast.error(error.message || 'Something went wrong!');
