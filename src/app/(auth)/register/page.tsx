@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { signIn } from 'next-auth/react';
 import toast from 'react-hot-toast';
+import { signIn, getSession } from 'next-auth/react';
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -34,27 +35,37 @@ export default function RegisterPage() {
       }
 
       // Sign in the user after successful registration
-      const result = await signIn('credentials', {
-        email,
-        password,
-        redirect: false,
-      });
+      // Sign in the user after successful registration
+const result = await signIn('credentials', {
+  email,
+  password,
+  redirect: false,
+});
 
-      if (result?.error) {
-        throw new Error(result.error);
-      }
+if (result?.error) {
+  throw new Error(result.error);
+}
 
-      toast.success('Registered successfully!'); 
-       
+// ✅ Wait for session to update
+let session = await getSession();
+let retries = 5;
+while (!session && retries > 0) {
+  await new Promise((res) => setTimeout(res, 300));
+  session = await getSession();
+  retries--;
+}
 
-     // Check for pending game join
-        const pendingGameId = sessionStorage.getItem('pendingGameId');
-        if (pendingGameId) {
-          sessionStorage.removeItem('pendingGameId');
-          router.push(`/game/${pendingGameId}/lobby`);
-        } else {
-          router.push('/');
-        }
+toast.success('Registered successfully!');
+
+// ✅ Redirect to game if pending
+const pendingGameId = sessionStorage.getItem('pendingGameId');
+if (pendingGameId) {
+  sessionStorage.removeItem('pendingGameId');
+  router.push(`/game/${pendingGameId}/lobby`);
+} else {
+  router.push('/');
+}
+
         
       
       
